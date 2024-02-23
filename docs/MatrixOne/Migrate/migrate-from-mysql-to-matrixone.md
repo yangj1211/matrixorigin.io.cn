@@ -25,7 +25,9 @@ MatrixOne 中，数据类型在保持与 MySQL 命名一致的情况下，在精
 
 1. 打开 DBeaver，从 MySQL 中选择待迁移的表，鼠标右键点击后选择**生成 SQL > DDL** 点击**复制**，先将这段 SQL 复制到一个文本编辑器内，给文本编辑器命名为 *tpch_ddl.sql*，保存到跳板机本地。
 
-    ![](https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/docs/migrate/mysql-1.png)
+    <div align="center">
+    <img src=https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/docs/migrate/mysql-1.png width=50% heigth=50%/>
+    </div>
 
 2. 连接 MatrixOne，并在 MatrixOne 中创建新的数据库和表：
 
@@ -39,19 +41,29 @@ MatrixOne 中，数据类型在保持与 MySQL 命名一致的情况下，在精
 
 1. 打开 DBeaver，从 MySQL 中选择待迁移的表，鼠标右键点击后选择**导出数据**：
 
-    ![](https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/docs/migrate/mysql-2.png)
+    <div align="center">
+    <img src=https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/docs/migrate/mysql-2.png width=40% heigth=40%/>
+    </div>
 
 2. 在**转化目标 > 导出目标**窗口选择**数据库**，点击**下一步**；在**表映射**窗口选择**目标容器**，目标容器选择 MatrixOne 的数据库 *tpch*：
 
-    ![](https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/docs/migrate/mysql-3.png)
+    <div align="center">
+    <img src=https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/docs/migrate/mysql-3.png width=50% heigth=50%/>
+    </div>
 
-    ![](https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/docs/migrate/mysql-4.png)
+    <div align="center">
+    <img src=https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/docs/migrate/mysql-4.png width=50% heigth=50%/>
+    </div>
 
 3. 在**抽取设置**和**数据加载设置**窗口，设置选择抽取和插入的数量，为了触发 MatrixOne 的直接写 S3 策略，建议填写 5000：
 
-    ![](https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/docs/migrate/mysql-5.png)
+    <div align="center">
+    <img src=https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/docs/migrate/mysql-5.png width=50% heigth=50%/>
+    </div>
 
-    ![](https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/docs/migrate/mysql-6.png)
+    <div align="center">
+    <img src=https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/docs/migrate/mysql-6.png width=50% heigth=50%/>
+    </div>
 
 4. 完成设置后，DBeaver 开始对数据进行迁移，在完成后 DBeaver 将会提示迁移成功。
 
@@ -81,7 +93,9 @@ MatrixOne 中，数据类型在保持与 MySQL 命名一致的情况下，在精
 
 1. 打开 DBeaver，从 MySQL 中选择待迁移的表，鼠标右键点击后选择**生成 SQL > DDL > 复制**，先将这段 SQL 复制到一个文本编辑器内，给文本编辑器命名为 *tpch_ddl.sql*，保存到跳板机本地。
 
-    ![](https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/docs/migrate/mysql-1.png)
+    <div align="center">
+    <img src=https://community-shared-data-1308875761.cos.ap-beijing.myqcloud.com/artwork/docs/migrate/mysql-1.png width=50% heigth=50%/>
+    </div>
 
 2. 连接到 MatrixOne，在 MatrixOne 中创建新的数据库和表：
 
@@ -150,6 +164,6 @@ MatrixOne 中，数据类型在保持与 MySQL 命名一致的情况下，在精
 
 ## 限制
 
-MatrixOne 1.1.1 版本已经支持 MySQL 的建表语句，因此可以顺畅地将 MySQL 表迁移到 MatrixOne 上。不过需要注意，在迁移过程中，不兼容 MySQL 部分关键字，如 `engine=` 等，在 MatrixOne 中会被自动忽略，也不会影响表结构的迁移。
+MatrixOne 1.1.0 版本已经支持 MySQL 的建表语句，因此可以顺畅地将 MySQL 表迁移到 MatrixOne 上。不过需要注意，在迁移过程中，不兼容 MySQL 部分关键字，如 `engine=` 等，在 MatrixOne 中会被自动忽略，也不会影响表结构的迁移。
 
 但需要特别注意的是，尽管 MatrixOne 支持 MySQL 建表语句，如果迁移的表中包含不兼容的数据类型、触发器、函数或存储过程，仍需要手动修改。更多详细的兼容性信息，参见 [MySQL 兼容性](../Overview/feature/mysql-compatibility.md)。
