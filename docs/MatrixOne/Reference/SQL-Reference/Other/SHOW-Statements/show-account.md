@@ -25,7 +25,6 @@
 | SNAPSHOT_SIZE   | 备份的数据存储大小（MB）    | --             | -- |
 | COMMENTS        | 创建时的 COMMENT 信息      | varchar         | mo_account                                   |
 
-
 ## **示例**
 
 ```sql
